@@ -11,7 +11,7 @@
   - Modifier: .navigation--expanded, .logo-container--collapsed
 */
 
-@import url('/main-src/styles/variables.css');
+@import url('/Artefact [Other Framework Setting | Vercel]/main-src/styles/variables.css');
 /* ==================================
    ==      1. VARIABLES.CSS        ==
    ================================== */
@@ -21,7 +21,7 @@
   global changes easy and ensuring consistency.
 */
 
-@import url('main-src/styles/base.css');
+@import url('/Artefact [Other Framework Setting | Vercel]/main-src/styles/base.css');
 /* ==================================
    ==         2. BASE.CSS          ==
    ================================== */
@@ -30,7 +30,7 @@
   It sets the foundation for the entire site.
 */
 
-@import url('main-src/components/nav/navigation.css');
+@import url('Artefact [Other Framework Setting | Vercel]/main-src/components/nav/navigation.css');
 /* ==================================
    ==   3. COMPONENTS/NAV.CSS      ==
    ================================== */
@@ -40,7 +40,7 @@
   - It's a "fixed" block, meaning it stays at the top.
 */
 
-@import url('main-src/components/logo/logo.css');
+@import url('/Artefact [Other Framework Setting | Vercel]/main-src/components/logo/logo.css');
 /* ==================================
    ==    4. COMPONENTS/LOGO.CSS    ==
    ================================== */
@@ -50,7 +50,7 @@
   so it could be reused elsewhere.
 */
 
-@import url('main-src/styles/content.css');
+@import url('/Artefact [Other Framework Setting | Vercel]/main-src/styles/content.css');
 /* ==================================
    ==      5. LAYOUT/CONTENT.CSS     ==
    ================================== */
@@ -58,12 +58,12 @@
   Styles for the main content area of the page.
 */
 
-@import url('main-src/styles/footer.css');
+@import url('/Artefact [Other Framework Setting | Vercel]/main-src/styles/footer.css');
 /* ==================================
    ==      6. LAYOUT/FOOTER.CSS      ==
    ================================== */
 
-@import url('main-src/styles/responsive.css');
+@import url('/Artefact [Other Framework Setting | Vercel]/main-src/styles/responsive.css');
 
 /* ==================================
    ==       7. RESPONSIVE.CSS      ==

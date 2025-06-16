@@ -98,7 +98,7 @@
 
     <!-- NON-CRITICAL CSS: Loaded asynchronously to not block page rendering. -->
     <link as="style"
-          href="/main-src/main.css"
+          href="/Artefact%20%5BOther%20Framework%20Setting%20%7C%20Vercel%5D/main-src%20%5BOther%20Framework%20Setting%20%7C%20Vercel%5D/main-src/main.css"
           onload="this.onload=null;this.rel='stylesheet'" rel="preload">
     <link as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
           onload="this.onload=null;this.rel='stylesheet'"
@@ -106,7 +106,7 @@
 
     <!-- Fallback for browsers without JavaScript (loads CSS directly) -->
     <noscript>
-        <link href="/main-src/main.css"
+        <link href="/Artefact%20%5BOther%20Framework%20Setting%20%7C%20Vercel%5D/main-src%20%5BOther%20Framework%20Setting%20%7C%20Vercel%5D/main-src/main.css"
               rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     </noscript>
@@ -136,9 +136,9 @@ which acts as a BEM modifier (`navigation--expanded`).
                     <!-- ELEMENT: logo-image-container -->
                     <div class="logo-image-container">
                         <img alt="Company Logo Dark" class="logo-image logo--dark"
-                             src="/media-src/logo/Logo%20Dark.png">
+                             src="/Artefact [Other Framework Setting | Vercel]/media-src/logo/Logo Dark.png">
                         <img alt="Company Logo Light" class="logo-image logo--light"
-                             src="/media-src/logo/Logo%20White.png">
+                             src="/Artefact [Other Framework Setting | Vercel]/media-src/logo/Logo White.png">
                     </div>
                     <!-- ELEMENT: logo-text-container -->
                     <div class="logo-text-container">
@@ -246,22 +246,22 @@ which acts as a BEM modifier (`navigation--expanded`).
         <div class="content-block">
             <h2>CSS Fix Details</h2>
             <p>The key changes:</p>
-            <pre><code>/* Changed from row-reverse to row */
-	.logo-container.expanded {
-	flex-direction: row;
-	}
+            <pre><code>/*  Changed from row-reverse to row */
+    .logo-container.expanded {
+    flex-direction: row;
+    }
 
-	/* Explicit order definitions */
-	.logo-container.expanded .logo-image-container { order: 3; }
-	.logo-container.expanded .logo-text-container { order: 2; }
-	.logo-container.expanded .logo-title { order: 1; }</code></pre>
+/*  Explicit order definitions */
+    .logo-container.expanded .logo-image-container { order: 3; }
+    .logo-container.expanded .logo-text-container { order: 2; }
+    .logo-container.expanded .logo-title { order: 1; }</code></pre>
         </div>
 
         <div class="content-block">
             <h2>JavaScript Fix</h2>
             <p>Fixed the text swapping logic:</p>
             <pre><code>// Changed from 'from' to 'by'
-	logoText.textContent = isExpanding ? 'by' : 'for';</code></pre>
+logoText.textContent = isExpanding ? 'by' : 'for';</code></pre>
         </div>
     </div>
 
@@ -308,9 +308,9 @@ which acts as a BEM modifier (`navigation--expanded`).
             <li>Adjust sizing as needed</li>
         </ol>
         <pre><code>&lt;div class="logo-icon"&gt;
-	  &lt;img src="/path/to/Logo Dark.png" class="logo-image logo-dark" alt="Company Logo"&gt;
-	  &lt;img src="/path/to/Logo White.png" class="logo-image logo-white" alt="Company Logo"&gt;
-	&lt;/div&gt;</code></pre>
+    &lt;img src="/path/to/Logo Dark.png" class="logo-image logo-dark" alt="Company Logo"&gt;
+    &lt;img src="/path/to/Logo White.png" class="logo-image logo-white" alt="Company Logo"&gt;
+&lt;/div&gt;</code></pre>
     </div>
 </main>
 
@@ -329,7 +329,7 @@ which acts as a BEM modifier (`navigation--expanded`).
 Loading scripts at the end of the <body> prevents them from blocking the rendering of the page content.
 `defer` ensures the script is executed after the document has been parsed.
 -->
-<script src="/main-src/main.js"></script>
-<script src="/main-src/scripts/loadCSS.js"></script>
+<script src="/Artefact [Other Framework Setting | Vercel]/main-src/main.js"></script>
+<script src="/Artefact [Other Framework Setting | Vercel]/main-src/scripts/loadCSS.js"></script>
 </body>
 </html>
