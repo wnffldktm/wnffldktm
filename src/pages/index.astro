@@ -1,12 +1,27 @@
 ---
+// File: src/pages/index.astro
+// ---
+// This is your homepage. Astro uses file-based routing. `index.astro` becomes the `/` route.
+// The "frontmatter" script runs on the server during the build.
+// ---
+// File: src/layouts/Layout.astro
+// ---
+// Layouts define the HTML shell for pages, avoiding repetition of <head>, <body>, etc.
+// ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import ContentBlock from '../components/ContentBlock.astro';
 ---
 
 <!doctype html>
 <html lang="en">
+<!--
+  This is the HTML template for the homepage.
+  It will be placed into the <slot /> of the Layout.astro component.
+-->
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -44,6 +59,28 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
 			</p>
 		</main>
+		<!--FROM GEMINI
+			This is the HTML template for the homepage.
+			It will be placed into the <slot /> of the Layout.astro component.
+		-->
+		<main class="main-content">
+			<h1>Dummy use of class="main-content" from Gemini</h1>
+			<p>This site is now structured as an Astro project, making it scalable and easy to maintain.</p>
+
+			<div class="content-grid">
+				<ContentBlock
+					title="Starting Your Business"
+					content="Turning your business idea into reality requires careful planning and execution."
+				/>
+				<ContentBlock
+					title="Financial Management"
+					content="Reach your target audience with proven marketing techniques and manage your finances."
+				/>
+			</div>
+		</main>
+		<!--FROM GEMINI
+			UNTIL HERE
+		-->
 		<Footer />
 	</body>
 </html>
