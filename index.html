@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--ARCHITECTURE & WORKFLOW OVERVIEW
+    This project structure is a great foundation. Here's how it fits into your DFD:
+    1. BEM (Block, Element, Modifier) is used for scalable and maintainable CSS.
+       - Block: A standalone, reusable component (e.g., 'navigation', 'logo-container').
+       - Element: A part of a block (e.g., 'navigation__wrapper', 'logo__image'). Not used strictly here, but the principle applies.
+       - Modifier: A state change (e.g., '.navigation--expanded', '.logo-container--collapsed').
+    2. File Structure for Production (Vercel/Next.js/Astro):
+       - You would create component files (e.g., Navigation.jsx, Logo.astro).
+       - Each component file would contain its own HTML, CSS (often scoped or using modules), and JS.
+       - Your build tool would bundle these into optimized assets for deployment.
+    -->
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>wnffldktm</title>
+
+    <!-- SEO & Social Media Meta Tags -->
+    <meta content="Personal Blog & Portfolio Website | wnffldktm from Arbeit na Kollektiven." name="description"/>
+    <meta content="wnffldktm" property="og:title">
+    <meta content="An example of a fixed logo swap navigation layout." property="og:description">
+    <!-- etc. -->
+
+    <!-- PERFORMANCE: Pre-connect to essential external domains. -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+
+    <!--  CSS LOADING STRATEGY
+       -  Critical CSS: A small amount of CSS needed for the initial screen (like navigation bar styles) is placed inline in a <style> tag.
+          This ensures the page appears styled immediately, improving Perceived Performance and Core Web Vitals (LCP).
+       -  Non-Critical CSS: The rest of the stylesheets are loaded asynchronously using `rel="preload"` and an `onload` handler.
+          This prevents them from blocking the initial page render.
+    -->
+    <style>
+        /* CRITICAL CSS:
+        This should contain only the absolute minimum styles needed for the above-the-fold content.
+        For this page, that would be the base styles and the collapsed navigation bar styles.
+        */
+        :root {
+            --font-headline: 'Lora', serif;
+            --font-body: 'Inter', sans-serif;
+            --color-primary-dark: #122241;
+            --color-primary-accent: #AE9065;
+            --color-white: #ffffff;
+            --color-text-light: #f0f0f0;
+            --nav-height-collapsed: 5rem;
+            --transition-duration: 0.4s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            background-color: #f4f5f6;
+        }
+
+        /* BLOCK: navigation */
+        .navigation {
+            background-color: #fff;
+            color: var(--color-primary-dark);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color var(--transition-duration) ease-in-out, height var(--transition-duration) ease-in-out;
+            overflow: hidden;
+            height: var(--nav-height-collapsed);
+        }
+
+        /* ELEMENT: navigation-wrapper */
+        .navigation-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--nav-height-collapsed);
+            padding: 0 1.25rem;
+            max-width: 77.5rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .navigation-logo {
+            z-index: 1002;
+        }
+
+        .nav-toggle {
+            z-index: 1003;
+        }
+    </style>
+
+    <!-- NON-CRITICAL CSS: Loaded asynchronously to not block page rendering. -->
+    <link as="style"
+          href="/main-src/main.css"
+          onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <link as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          onload="this.onload=null;this.rel='stylesheet'"
+          rel="preload">
+
+    <!-- Fallback for browsers without JavaScript (loads CSS directly) -->
+    <noscript>
+        <link href="/main-src/main.css"
+              rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    </noscript>
+
+    <!-- GOOGLE FONTS: Loaded with `media="print"` and swapped to `media="all"` onload. A common performance pattern. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:wght@400;700&display=swap"
+          media="print" onload="this.media='all'" rel="stylesheet">
+</head>
+
+<body>
+<!--
+BLOCK: navigation
+This is the main navigation component. Its state is controlled by the 'expanded' class,
+which acts as a BEM modifier (`navigation--expanded`).
+-->
+<header>
+    <nav class="navigation" id="main-navigation">
+        <div class="navigation-wrapper">
+
+            <a class="navigation-logo" href="#">
+                <!--SUB-BLOCK: logo-container
+                This is a nested, self-contained component. It has its own elements and modifiers.
+                This modularity means you could reuse this logo component elsewhere (e.g., in the footer).
+                Modifiers: .collapsed (default), .expanded (state change)
+                -->
+                <div class="logo-container collapsed" id="logo-container">
+                    <!-- ELEMENT: logo-image-container -->
+                    <div class="logo-image-container">
+                        <img alt="Company Logo Dark" class="logo-image logo--dark"
+                             src="/media-src/logo/Logo%20Dark.png">
+                        <img alt="Company Logo Light" class="logo-image logo--light"
+                             src="/media-src/logo/Logo%20White.png">
+                    </div>
+                    <!-- ELEMENT: logo-text-container -->
+                    <div class="logo-text-container">
+                        <div class="logo-text">for</div>
+                    </div>
+                    <!-- ELEMENT: logo-title -->
+                    <div class="logo-title">wnffldktm</div>
+                </div>
+            </a>
+
+            <!-- ELEMENT: nav-section-titles (only visible on larger screens) -->
+            <div class="nav-section-titles">
+                <a class="nav-section-title-top" href="#">Start</a>
+                <a class="nav-section-title-top" href="#">Run</a>
+                <a class="nav-section-title-top" href="#">Grow</a>
+                <a class="nav-section-title-top" href="#">Good Company</a>
+            </div>
+
+            <!--ELEMENT: nav-toggle
+            - A button for accessibility.
+            - ARIA attributes (aria-controls, aria-expanded) are essential for screen readers.
+            - JavaScript will manage the 'aria-expanded' state.
+            -->
+            <button aria-controls="nav-menu" aria-expanded="false" aria-label="Menu" class="nav-toggle" id="nav-toggle">
+                <span class="icon-three-line">☰</span>
+                <span class="icon-close">✕</span>
+            </button>
+        </div>
+
+        <!--ELEMENT: nav-menu
+           This is the content that expands. It's hidden by default for accessibility.
+         -->
+        <div aria-hidden="true" class="nav-menu" id="nav-menu">
+            <div class="nav-sections-wrapper">
+                <!-- Each of these could be its own 'nav-section' block component -->
+                <div class="nav-section">
+                    <a class="nav-section-title" href="#">Start</a>
+                    <p class="navigation_section-description">Everything you need to know to start your own
+                        business.</p>
+                    <ul>
+                        <li><a href="#">Business Ideas</a></li>
+                        <li><a href="#">Strategy</a></li>
+                        <li><a href="#">Startup</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <a class="nav-section-title" href="#">Run</a>
+                    <p class="navigation_section-description">Practical and real-world advice on how to run your
+                        business.</p>
+                    <ul>
+                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">Human Resources</a></li>
+                        <li><a href="#">Technology</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <a class="nav-section-title" href="#">Grow</a>
+                    <p class="navigation_section-description">Our best expert advice on how to grow your business.</p>
+                    <ul>
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Sales</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <a class="nav-section-title" href="#">Good Company</a>
+                    <p class="navigation_section-description">Entrepreneurs and industry leaders share their best
+                        advice.</p>
+                    <ul>
+                        <li><a href="#">Growth Studio</a></li>
+                        <li><a href="#">Ask the Board</a></li>
+                        <li><a href="#">The Leap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- BLOCK: main-content -->
+<main class="main-content">
+    <!-- Content sections -->
+    <h1>Logo Position Swap Navigation - Fixed</h1>
+    <p>I've fixed the logo position swap functionality. Now the order correctly changes between collapsed and expanded
+        states.</p>
+    <!-- ... more content ... -->
+    <div class="demo-note">
+        <h3>How the Fixed Logo Position Swap Works</h3>
+        <p>When the navigation is in the collapsed state:</p>
+        <ul>
+            <li>Logo image is displayed first (order: 1)</li>
+            <li>Then the "for" text (order: 2)</li>
+            <li>Then the website title "wnffldktm" (order: 3)</li>
+        </ul>
+        <p>When the navigation is expanded:</p>
+        <ul>
+            <li>The website title "wnffldktm" moves to the first position (order: 1)</li>
+            <li>Then the "for" text changes to "by" (order: 2)</li>
+            <li>Then the logo image (order: 3)</li>
+        </ul>
+        <p>I also fixed the text swapping logic in JavaScript.</p>
+    </div>
+
+    <div class="content-grid">
+        <div class="content-block">
+            <h2>CSS Fix Details</h2>
+            <p>The key changes:</p>
+            <pre><code>/* Changed from row-reverse to row */
+	.logo-container.expanded {
+	flex-direction: row;
+	}
+
+	/* Explicit order definitions */
+	.logo-container.expanded .logo-image-container { order: 3; }
+	.logo-container.expanded .logo-text-container { order: 2; }
+	.logo-container.expanded .logo-title { order: 1; }</code></pre>
+        </div>
+
+        <div class="content-block">
+            <h2>JavaScript Fix</h2>
+            <p>Fixed the text swapping logic:</p>
+            <pre><code>// Changed from 'from' to 'by'
+	logoText.textContent = isExpanding ? 'by' : 'for';</code></pre>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        <div class="content-block">
+            <h2>Starting Your Business</h2>
+            <p>Turning your business idea into reality requires careful planning and execution. Learn how to validate
+                your concept, create a business plan, and secure funding.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Financial Management</h2>
+            <p>Reach your target audience with proven marketing techniques. Explore digital marketing, branding, content
+                strategy, and customer acquisition methods.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Marketing Strategies</h2>
+            <p>Effective financial management is crucial for business sustainability. Discover strategies for budgeting,
+                cash flow management, and financial forecasting.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Team Building</h2>
+            <p>Building a strong team is essential for long-term success. Learn how to recruit, train, and retain top
+                talent.</p>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <h2>Business Success Stories</h2>
+        <p>Discover how entrepreneurs overcame challenges to build thriving businesses. These case studies provide
+            valuable insights and inspiration for your own journey.</p>
+        <p>From small startups to established enterprises, each story highlights unique strategies and lessons learned
+            that you can apply to your business.</p>
+    </div>
+
+    <div class="content-block">
+        <h2>Implementation with Your Images</h2>
+        <p>To use your actual logo images:</p>
+        <ol>
+            <li>Replace the demo logo elements with your image tags</li>
+            <li>Set the correct paths to your logo files</li>
+            <li>Adjust sizing as needed</li>
+        </ol>
+        <pre><code>&lt;div class="logo-icon"&gt;
+	  &lt;img src="/path/to/Logo Dark.png" class="logo-image logo-dark" alt="Company Logo"&gt;
+	  &lt;img src="/path/to/Logo White.png" class="logo-image logo-white" alt="Company Logo"&gt;
+	&lt;/div&gt;</code></pre>
+    </div>
+</main>
+
+<!-- BLOCK: footer -->
+<footer class="footer">
+    <p>© 2025 | wnffldktm from <a href="#">Arbeit na Kollektiven</a></p>
+    <!-- SUB-BLOCK: social-links -->
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+</footer>
+<!--JAVASCRIPT LOADING
+--------------------
+Loading scripts at the end of the <body> prevents them from blocking the rendering of the page content.
+`defer` ensures the script is executed after the document has been parsed.
+-->
+<script src="/main-src/main.js"></script>
+<script src="/main-src/scripts/loadCSS.js"></script>
+</body>
+</html>

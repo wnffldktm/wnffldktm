@@ -1,0 +1,74 @@
+/*
+  CSS ARCHITECTURE & REUSABILITY
+  ------------------------------
+  For a larger project, you would split this into multiple files as you suggested.
+  A build tool would then combine them using `@import` or a similar mechanism.
+  This example simulates that structure with comments.
+
+  The BEM (Block, Element, Modifier) convention is used throughout.
+  - Block: .navigation, .logo-container, .nav-section
+  - Element: .navigation-wrapper, .logo-image-container (Here using a hyphenated, looser BEM-style)
+  - Modifier: .navigation--expanded, .logo-container--collapsed
+*/
+
+@import url('/main-src/styles/variables.css');
+/* ==================================
+   ==      1. VARIABLES.CSS        ==
+   ================================== */
+/*
+  Contains all reusable design tokens (colors, fonts, sizes).
+  This is the single source of truth for your design system, making
+  global changes easy and ensuring consistency.
+*/
+
+@import url('main-src/styles/base.css');
+/* ==================================
+   ==         2. BASE.CSS          ==
+   ================================== */
+/*
+  Contains global styles, resets, and default typography.
+  It sets the foundation for the entire site.
+*/
+
+@import url('main-src/components/nav/navigation.css');
+/* ==================================
+   ==   3. COMPONENTS/NAV.CSS      ==
+   ================================== */
+/*
+  BLOCK: .navigation
+  - This is the main component for the navigation bar.
+  - It's a "fixed" block, meaning it stays at the top.
+*/
+
+@import url('main-src/components/logo/logo.css');
+/* ==================================
+   ==    4. COMPONENTS/LOGO.CSS    ==
+   ================================== */
+/*
+  SUB-BLOCK: .logo-container
+  This block lives inside the navigation but is styled independently
+  so it could be reused elsewhere.
+*/
+
+@import url('main-src/styles/content.css');
+/* ==================================
+   ==      5. LAYOUT/CONTENT.CSS     ==
+   ================================== */
+/*
+  Styles for the main content area of the page.
+*/
+
+@import url('main-src/styles/footer.css');
+/* ==================================
+   ==      6. LAYOUT/FOOTER.CSS      ==
+   ================================== */
+
+@import url('main-src/styles/responsive.css');
+
+/* ==================================
+   ==       7. RESPONSIVE.CSS      ==
+   ================================== */
+/*
+  Contains all media queries. For larger projects, you might co-locate
+  these styles within their respective component files (e.g., navigation.css).
+*/

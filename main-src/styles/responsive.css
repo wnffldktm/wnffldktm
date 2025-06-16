@@ -1,0 +1,82 @@
+/* ======= RESPONSIVE ADJUSTMENTS ======= */
+@media (max-width: 56.25rem) {
+    /* 900px */
+    .nav-section-titles {
+        display: none;
+    }
+
+    .navigation-wrapper {
+        justify-content: space-between;
+    }
+
+    .navigation-logo {
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 48rem) {
+    /* 768px */
+    .navigation-wrapper {
+        padding: 0 0.9375rem;
+    }
+
+    .logo-title {
+        font-size: 1.3rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    /* 640px */
+    .logo-container.expanded {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .logo-container.expanded .logo-image-container {
+        order: 3;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .logo-container.expanded .logo-text-container {
+        order: 2;
+    }
+
+    .logo-container.expanded .logo-title {
+        order: 1;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 30rem) {
+    /* 480px */
+    :root {
+        --nav-height-collapsed: 4rem;
+    }
+
+    .logo-image-container {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo-title {
+        font-size: 1.2rem;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .nav-toggle {
+        font-size: 1.5rem;
+    }
+
+    .navigation-logo {
+        max-width: 180px;
+    }
+}

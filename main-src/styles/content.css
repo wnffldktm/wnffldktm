@@ -1,0 +1,65 @@
+/*  BLOCK: Main Content
+    Element: content blocks, grids
+    Modifier: Dimmed state when nav is open
+*/
+.main-content {
+    padding: calc(var(--nav-height-collapsed) + 2.5rem) 1.25rem 2.5rem;
+    max-width: 62.5rem;
+    margin: 0 auto;
+    transition: opacity var(--transition-duration) ease-in-out;
+}
+
+.nav-expanded .main-content {
+    opacity: 0.2;
+    pointer-events: none; /* Prevents interaction with content when nav is open */
+}
+
+h1 {
+    font-family: var(--font-headline);
+    margin-bottom: 1rem;
+    color: #122241;
+    font-size: 2.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+/* ======= CONTENT BLOCKS ======= */
+.content-block {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.5625rem;
+    margin-bottom: 1.875rem;
+    box-shadow: 0 0.1875rem 0.625rem rgba(0, 0, 0, 0.08);
+}
+
+.content-block h2 {
+    font-family: var(--font-headline);
+    color: var(--color-primary-dark);
+    margin-bottom: 0.9375rem;
+    font-size: 1.8rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: 1.5625rem;
+    margin-top: 1.875rem;
+}
+
+.demo-note {
+    background: #fff8e6;
+    border-left: 0.25rem solid var(--color-primary-accent);
+    padding: 1.25rem;
+    margin: 1.875rem 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.demo-note h3 {
+    color: #7a6a4f;
+    margin-bottom: 0.625rem;
+    font-size: 1.3rem;
+}
