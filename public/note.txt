@@ -1,0 +1,76 @@
+import { defineConfig } from "astro/config";
+
+import react from "@astrojs/react";
+
+import svelte from "@astrojs/svelte";
+
+import db from "@astrojs/db";
+
+import markdoc from "@astrojs/markdoc";
+
+import mdx from "@astrojs/mdx";
+
+import partytown from "@astrojs/partytown";
+
+import sitemap from "@astrojs/sitemap";
+
+import vercel from "@astrojs/vercel";
+
+import node from "@astrojs/node";
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [react(), svelte(), db(), markdoc(), mdx(), partytown(), sitemap()],
+  adapter: vercel()
+});
+
+{
+  "name": "wnffldktm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wnffldktm/wnffldktm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wnffldktm/wnffldktm/issues"
+  },
+  "homepage": "https://github.com/wnffldktm/wnffldktm#readme",
+  "description": "",
+  "dependencies": {
+    "@astrojs/db": "^0.15.0",
+    "@astrojs/markdoc": "^0.15.0",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/node": "^9.2.2",
+    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/svelte": "^7.1.0",
+    "@astrojs/vercel": "^8.0.4",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vercel/speed-insights": "^1.2.0",
+    "astro": "^5.9.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "svelte": "^5.34.6",
+    "typescript": "^5.8.3"
+  }
+}
+
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
+}

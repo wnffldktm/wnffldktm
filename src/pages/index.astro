@@ -1,0 +1,27 @@
+---
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component frontmatter". It never runs in the browser.
+console.log('This runs in your terminal, not the browser!');
+// src/pages/index.astro
+// This is the content for your homepage.
+import Layout from '../layouts/Layout.astro';
+import ContentBlock from '../components/ContentBlock.astro';
+---
+<!-- Below is your "component template." It's just HTML, but with
+    some magic sprinkled in to help you build great templates. -->
+<Layout title="wnffldktm - Home">
+    <div class="main-content">
+        <h1>Logo Position Swap Navigation - Fixed</h1>
+        <p>This site is now structured as an Astro project, making it scalable and easy to maintain.</p>
+        <div class="content-grid">
+            <ContentBlock
+                    title="Starting Your Business"
+                    content="Turning your business idea into reality requires careful planning and execution."
+            />
+            <ContentBlock
+                    title="Financial Management"
+                    content="Reach your target audience with proven marketing techniques and manage your finances."
+            />
+        </div>
+    </div>
+</Layout>

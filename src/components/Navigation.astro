@@ -1,0 +1,49 @@
+---
+// src/components/Navigation.astro
+import Logo from './Logo.astro';
+---
+<nav class="navigation" id="main-navigation">
+    <div class="navigation-wrapper">
+        <a class="navigation-logo" href="/">
+            <Logo />
+        </a>
+        <div class="nav-section-titles">
+            <a class="nav-section-title-top" href="#">Start</a>
+            <a class="nav-section-title-top" href="#">Run</a>
+            <a class="nav-section-title-top" href="#">Grow</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Menu">
+            <span class="icon-three-line">☰</span>
+            <span class="icon-close">✕</span>
+        </button>
+    </div>
+    <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <!-- Expanded menu content here -->
+    </div>
+</nav>
+
+<script>
+    function setupNav() {
+        const navToggle = document.getElementById('nav-toggle');
+        const navigation = document.getElementById('main-navigation');
+        const navMenu = document.getElementById('nav-menu');
+        const body = document.body;
+        const logoContainer = document.getElementById('logo-container');
+        const logoText = logoContainer?.querySelector('.logo-text');
+
+        if (!navToggle || !navigation || !logoContainer) return;
+
+        navToggle.addEventListener('click', () => {
+            const isExpanding = !navigation.classList.contains('expanded');
+            navigation.classList.toggle('expanded', isExpanding);
+            body.classList.toggle('nav-expanded', isExpanding);
+            logoContainer.classList.toggle('collapsed', !isExpanding);
+            logoContainer.classList.toggle('expanded', isExpanding);
+            if(logoText) logoText.textContent = isExpanding ? 'by' : 'for';
+            navToggle.setAttribute('aria-expanded', String(isExpanding));
+            navMenu.setAttribute('aria-hidden', String(!isExpanding));
+            body.style.overflow = isExpanding ? 'hidden' : '';
+        });
+    }
+    document.addEventListener('astro:page-load', setupNav);
+</script>

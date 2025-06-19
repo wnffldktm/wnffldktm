@@ -1,0 +1,38 @@
+{
+  "name": "wnffldktm",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wnffldktm/wnffldktm.git"
+  },
+  "keywords": [],
+  "author": "wnffldktm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wnffldktm/wnffldktm/issues"
+  },
+  "homepage": "https://github.com/wnffldktm/wnffldktm#readme",
+  "description": "",
+  "dependencies": {
+    "@astrojs/db": "^0.15.0",
+    "@astrojs/markdoc": "^0.15.0",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "astro": "^5.9.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.3"
+  }
+}

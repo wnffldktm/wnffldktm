@@ -1,0 +1,35 @@
+---
+// src/components/ContentBlock.astro
+// ---
+// This is a simple, reusable component for a content card.
+// It accepts `title` and `content` as props.
+// ---
+interface Props {
+    title: string;
+    content: string;
+}
+
+const { title, content } = Astro.props;
+---
+<div class="content-block">
+    <h2>{title}</h2>
+    <p>{content}</p>
+</div>
+
+<!--
+    SCOPED STYLES
+    -------------
+    Astro allows for <style> tags within component files.
+    By default, these styles are SCOPED, meaning they will only apply
+    to the HTML in this specific component file and won't leak out
+    to affect other parts of your site. This is a powerful feature for
+    preventing CSS conflicts.
+-->
+<style>
+    .content-block {
+        background: white;
+        border-radius: 0.5rem;
+        padding: 1.5625rem;
+        box-shadow: 0 0.1875rem 0.625rem rgba(0, 0, 0, 0.08);
+    }
+</style>
