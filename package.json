@@ -2,7 +2,6 @@
   "name": "wnffldktm",
   "type": "module",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -20,19 +19,24 @@
     "url": "https://github.com/wnffldktm/wnffldktm/issues"
   },
   "homepage": "https://github.com/wnffldktm/wnffldktm#readme",
-  "description": "",
+  "description": "Personal Blog & Portfolio Website",
   "dependencies": {
     "@astrojs/db": "^0.15.0",
     "@astrojs/markdoc": "^0.15.0",
     "@astrojs/mdx": "^4.3.0",
+    "@astrojs/node": "^9.2.2",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.3.0",
     "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/svelte": "^7.1.0",
+    "@astrojs/vercel": "^8.0.4",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.9.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "svelte": "^5.34.6",
     "typescript": "^5.8.3"
   }
 }
