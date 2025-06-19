@@ -15,15 +15,53 @@ import ContentBlock from '../components/ContentBlock.astro';
     <div class="main-content">
         <h1>Logo Position Swap Navigation - Fixed</h1>
         <p>This site is now structured as an Astro project, making it scalable and easy to maintain.</p>
+        <div class="demo-note">
+            <h3>Lorem ipsum quia dolor sit amet</h3>
+            <p>When the navigation is in the collapsed state:</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Fusce a velit ac dui placerat luctus vitae sit amet quam.</li>
+            </ul>
+            <h3>Amet sit dolor quia ipsum lorem</h3>
+            <p>When the navigation is expanded:</p>
+            <ul>
+                <li>Integer ut nunc at sem sodales pharetra ac non velit. (order: 1)</li>
+                <li>Integer consectetur mauris a ipsum rutrum fringilla. (order: 2)</li>
+                <li>Cras mattis quam eu tortor congue, sed suscipit justo rhoncus. (order: 3)</li>
+            </ul>
+            <p>I also fixed the text swapping logic in JavaScript.</p>
+        </div>
         <div class="content-grid">
             <ContentBlock
-                    title="Starting Your Business"
-                    content="Turning your business idea into reality requires careful planning and execution."
+                    title="Thai"
+                    content="แคมเปญเซ็กซี่ผลไม้ปักขคณนา แพลนงี้ แรงใจแจ็กเก็ต คอนเซปต์ยูโรอาร์ติสต์ วิลเลจไชน่าโปรเจกเตอร์ สตรอว์เบอร์รี คอมเมนต์สไตล์ออเดอร์เซนเซอร์อาว์ อ่วมยูวี ครัวซองต์การันตีโพลารอยด์พาร์ทเนอร์ ไฮเวย์ง่าว เอ็กซ์เพรสช็อต แชมเปญเป่ายิงฉุบเพรียวบางซัมเมอร์ มายาคติ คณาญาติ จิตพิสัยฮ็อตด็อก สเตเดียมฟลุค "
             />
             <ContentBlock
-                    title="Financial Management"
-                    content="Reach your target audience with proven marketing techniques and manage your finances."
+                    title="Chinese"
+                    content="内五稿街摘欧費扱綿詩資業中畷権。禁検故旅責里見人合値百票歯先島紙文。彼現望速迎世賄体著方賞井時患懸越場界成。費権掲了背監月走容定内正安初事周提薦。頑以載持国検朝説勝春部現社変刊額。季経市警際景開本選迷安真場治暮。野問所書郷北計同一紀芸写。役要掲無判位絵転無合指絶念導。設転年面型銀色壊試話禁末語。"
             />
+            <ContentBlock
+                    title="Aksara"
+                    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium quam est, at malesuada magna dictum sed. Morbi in mauris ut urna auctor faucibus. Duis porttitor scelerisque facilisis. Maecenas interdum purus vitae molestie gravida. Cras elementum vitae quam ut dignissim. Praesent ligula ante, fringilla eu consectetur eget, rhoncus at ante. Vivamus molestie commodo aliquam. Vestibulum luctus sem in mattis vehicula."
+            />
+        </div>
+        <ContentBlock
+                title="Korea and Japan"
+                content="Can't put two types of aksara in the same content line. 예비비는 총액으로 국회의 의결을 얻어야 한다. 법률이 정하는 바에 의하여 연임할 수 있다, 국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며. 시장의 지배와 경제력의 남용을 <방지하며></방지하며>柄レ成83敵ロネオカ権岡た無速メ判参格ヒシハヲ投齢でル成宇せるけ情覚レわび動別ずるトで弁6据づょ。会イネ熊出おイ著景人ごっ撮安ロモ帳論イ反前関ウエカロ投来ヘキエ型提必ょ集禁トク記21卸ばク所頭せごずて動素ミレヲヌ小受投トワコ年体走フ査産されめだ。介ヲ虚5以8対むろみ京求くん地異レ会続ざものぐ育避今ちるくず減育トヨ未医ぶ取務ど。"
+        />
+        <div class="content-block">
+            <h2>Implementation with Your Images</h2>
+            <p>Content inside ContentBlock can't use ENTER/RETURN.</p>
+            <p>To use your actual logo images:</p>
+            <ol>
+                <li>Replace the demo logo elements with your image tags</li>
+                <li>Set the correct paths to your logo files</li>
+                <li>Adjust sizing as needed</li>
+            </ol>
+            <pre><code>&lt;div class="logo-icon"&gt;
+    &lt;img src="/path/to/Logo Dark.png" class="logo-image logo-dark" alt="Company Logo"&gt;
+    &lt;img src="/path/to/Logo White.png" class="logo-image logo-white" alt="Company Logo"&gt;
+&lt;/div&gt;</code></pre>
         </div>
     </div>
 </Layout>
