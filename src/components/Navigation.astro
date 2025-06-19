@@ -1,11 +1,20 @@
 ---
 // src/components/Navigation.astro
-import Logo from './Logo.astro';
 ---
 <nav class="navigation" id="main-navigation">
     <div class="navigation-wrapper">
         <a class="navigation-logo" href="/">
-            <Logo />
+            <div class="logo-container collapsed" id="logo-container">
+                <div class="logo-image-container">
+                    <!-- Using absolute URLs for now, but in Astro you'd typically put these in src/assets/ and import them -->
+                    <img alt="Company Logo Dark" class="logo-image logo--dark" src="https://assets.website-files.com/6451a1bb04144389e414f494/6451a1bb041443c5b314f4d2_Logo.svg">
+                    <img alt="Company Logo Light" class="logo-image logo--light" src="https://assets.website-files.com/6451a1bb041443e03814f4d3_Logo%20(1).svg">
+                </div>
+                <div class="logo-text-container">
+                    <div class="logo-text">for</div>
+                </div>
+                <div class="logo-title">wnffldktm</div>
+            </div>
         </a>
         <div class="nav-section-titles">
             <a class="nav-section-title-top" href="#">Start</a>

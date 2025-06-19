@@ -11,14 +11,12 @@ import markdoc from "@astrojs/markdoc";
 
 import mdx from "@astrojs/mdx";
 
-import partytown from "@astrojs/partytown";
-
 import sitemap from "@astrojs/sitemap";
 
 import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), svelte(), db(), markdoc(), mdx(), partytown(), sitemap()],
+  integrations: [react(), svelte(), db(), markdoc(), mdx(), sitemap()],
   adapter: vercel()
 });
