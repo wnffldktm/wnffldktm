@@ -29,7 +29,7 @@
     "@astrojs/react": "^4.3.0",
     "@astrojs/sitemap": "^3.4.1",
     "@astrojs/svelte": "^7.1.0",
-    "@astrojs/vercel": "^8.0.4",
+    "@astrojs/vercel": "^8.1.5",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vercel/speed-insights": "^1.2.0",

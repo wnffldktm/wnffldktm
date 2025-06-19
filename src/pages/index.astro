@@ -4,12 +4,14 @@
 console.log('This runs in your terminal, not the browser!');
 // src/pages/index.astro
 // This is the content for your homepage.
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 import Layout from '../layouts/Layout.astro';
 import ContentBlock from '../components/ContentBlock.astro';
 ---
 <!-- Below is your "component template." It's just HTML, but with
     some magic sprinkled in to help you build great templates. -->
 <Layout title="wnffldktm - Home">
+    <SpeedInsights/>
     <div class="main-content">
         <h1>Logo Position Swap Navigation - Fixed</h1>
         <p>This site is now structured as an Astro project, making it scalable and easy to maintain.</p>
